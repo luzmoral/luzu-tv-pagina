@@ -16,27 +16,27 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 20px;
+  padding-top: 0;
 }
-
-/* capa oscura encima de la imagen 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-}*/
-
+/* barra del header */
+.barra-header {
+  background-color: #e6d6df;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
 /* logo arriba centrado */
 .logo {
   width: 120px;
   z-index: 1;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 /* caja negra del texto */
 .contenido {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.9);
   padding: 6px;
   border-radius: 10px;
   text-align: center;
@@ -143,8 +143,10 @@ html, body {
   border-radius: 15px;
 }
 
-.info h2 {
+.info h2,
+.programas h2 {
   margin-bottom: 15px;
+  font-size: 22px;
 }
 
 .info p {
@@ -153,39 +155,66 @@ html, body {
 }
 .celular {
   position: absolute;
-  right: -40px;
+  right: -50px;
   top: -20px;
   width: 130px;
 }
 .programas {
   position: relative;
   background-color: #e6d6df;
-  padding: 40px 20px;
+  padding: 40px 10px 40px 10px;
   overflow: hidden;
+  text-align: center;
 }
 
 .programas h2 {
-  margin-bottom: 20px;
+  margin: 0 auto 30px;
+  max-width: 760px;
+  text-align: center;
+  font-size: 24px;
 }
 
 .lista {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  max-width: 300px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  max-width: none;
+  margin: 0;
+  justify-items: start;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
 }
 /* cada programa */
 .item {
   display: flex;
-  gap: 20px;
-  align-items: flex-start;
+  gap: 10px;
+  align-items: center;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.item div {
+  text-align: left;
+}
+
+.item div p {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.item div span {
+  font-size: 15px;
+  color: #333;
 }
 
 .icono {
-  width: 110px;   
-  height: 90px;
+  width: 160px;
+  height: 140px;
   border-radius: 50%;
-  object-fit: cover; 
+  object-fit: cover;
 }
 .mp {
   position: absolute;
@@ -213,7 +242,7 @@ html, body {
 /* imagen principal */
 .img-horarios {
   width: 100%;
-  max-width: 320px;
+  max-width: 420px;
   border-radius: 10px;
   margin-top: 20px;
 }
@@ -238,28 +267,25 @@ html, body {
 }
 
 /* título */
-.ubicacion h2 {
+.artistas h3,
+.ubicacion h3 {
   margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 20px;
 }
-.mapa {
-  display: block;
-  margin: 0 auto 20px;
+.mapa-frame {
   width: 100%;
-  max-width: 320px;
-  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
-.btn-maps {
+.mapa {
   display: block;
-  width: fit-content;
-  margin: 0 auto;
-  background-color: #2fd3c7; 
-  color: black;
-  padding: 12px 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
+  width: 100%;
+  max-width: none;
+  height: 350px;
+  border: 0;
 }
 
 .footer {
@@ -357,7 +383,7 @@ html, body {
 }
 
 .circulo-rojo {
-  background-color: red;
+  background-color: #19B87E;
 }
 
 .deco-casete-izq {
@@ -452,6 +478,57 @@ html, body {
   font-size: 14px;
 }
 
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  border: 4px solid #e6b800;
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 400px;
+  margin: auto;
+  background-color: #fff;
+  position: relative;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.modal-content p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
 /* MEDIA QUERIES: adaptar a compu */
 @media (min-width: 768px) {
   /* HERO */
@@ -512,40 +589,53 @@ html, body {
 
   /* PROGRAMAS */
   .lista {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
     margin: 0 auto;
+    justify-items: start;
+    width: calc(100% - 20px);
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .item {
-    flex: 0 0 30%;
-    gap: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
   }
   .icono {
-    width: 130px;
-    height: 110px;
+    width: 150px;
+    height: 130px;
   }
   .item div p {
-    font-size: 16px;
+    font-size: 17px;
+    font-weight: 700;
   }
   .item div span {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   /* UBICACION */
-  .mapa {
-    max-width: 500px;
+  .mapa-frame {
+    max-width: 900px;
   }
-  .btn-maps {
-    padding: 14px 24px;
-    font-size: 16px;
+  .mapa {
+    max-width: none;
+    height: 420px;
+    margin: 0 auto;
   }
 
   /* ARTISTAS */
+  .artistas h3,
+  .ubicacion h3 {
+    font-size: 26px;
+  }
   .img-horarios {
-    max-width: 450px;
+    max-width: 550px;
   }
   .vinilo {
     width: 140px;
@@ -568,6 +658,16 @@ html, body {
   .formulario-marco {
     max-width: 500px;
     padding: 30px;
+  }
+  .modal-content {
+    max-width: 500px;
+    padding: 30px;
+  }
+  .modal-content h2 {
+    font-size: 24px;
+  }
+  .modal-content p {
+    font-size: 16px;
   }
   .deco-casete-izq {
     left: -40px;
@@ -647,6 +747,7 @@ html, body {
   /* INFO */
   .info {
     max-width: 800px;
+    padding: 50px 40px;
   }
   .info h2 {
     font-size: 26px;
@@ -655,44 +756,68 @@ html, body {
     font-size: 18px;
   }
   .celular {
-    right: -80px;
-    top: -40px;
+    right: -40px;
+    top: 40px;
     width: 190px;
   }
 
   /* PROGRAMAS */
   .lista {
-    max-width: 1000px;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    gap: 18px;
+    max-width: 900px;
+    margin: 0 auto;
+    justify-items: center;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
   }
   .item {
-    flex: 0 0 30%;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    text-align: left;
+    width: 100%;
   }
   .icono {
-    width: 150px;
-    height: 130px;
+    width: 170px;
+    height: 140px;
+  }
+  .item div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .item div p {
-    font-size: 18px;
+    font-size: 19px;
+    font-weight: 700;
+    margin: 0;
   }
   .item div span {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   /* UBICACION */
   .mapa {
     max-width: 600px;
   }
-  .btn-maps {
-    padding: 16px 28px;
-    font-size: 18px;
-  }
 
   /* ENTRADAS */
+  .artistas h3,
+  .ubicacion h3 {
+    font-size: 30px;
+  }
   .entradas h1 {
     font-size: 36px;
   }
   .formulario-marco {
+    max-width: 600px;
+  }
+  .modal-content {
     max-width: 600px;
   }
   .deco-casete-izq,
