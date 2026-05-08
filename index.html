@@ -176,6 +176,7 @@
       <form id="form-entrada">
         <input type="text" id="nombre" placeholder="Nombre y apellido" required>
         <input type="email" id="correo" placeholder="Correo electrónico" required>
+        <input type="text" id="programa" placeholder="Programa que vas a ver" required>
         <button type="submit" class="btn-form">ADQUIRÍ TU ENTRADA</button>
       </form>
     </div>
@@ -186,6 +187,7 @@
         <span class="close">&times;</span>
         <h2>¡Felicidades <span id="nombre-modal"></span>!</h2>
         <p>Has completado tus datos correctamente.</p>
+        <p>Estás participando para un Meet & Greet para el programa <strong><span id="programa-modal"></span></strong>.</p>
         <p>Te llegará el QR de tu entrada al correo electrónico proporcionado.</p>
       </div>
     </div>
@@ -208,12 +210,15 @@
     const form = document.getElementById('form-entrada');
     const modal = document.getElementById('modal');
     const nombreModal = document.getElementById('nombre-modal');
+    const programaModal = document.getElementById('programa-modal');
     const closeBtn = document.querySelector('.close');
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       const nombre = document.getElementById('nombre').value;
+      const programa = document.getElementById('programa').value;
       nombreModal.textContent = nombre;
+      programaModal.textContent = programa;
       modal.style.display = 'flex';
     });
 
@@ -229,6 +234,3 @@
   </script>
 </body>
 </html>
-
-
-
