@@ -570,7 +570,7 @@ html, body {
   }
 
   /* CUENTA REGRESIVA */
-  .contador-section {
+   .contador-section {
     padding: 60px 30px;
   }
   .contador {
@@ -585,12 +585,16 @@ html, body {
   .fecha {
     font-size: 18px;
   }
-  .tiempo span {
+  .numeros span {
     font-size: 36px;
   }
-  .tiempo p {
+  .labels p{
     font-size: 14px;
   }
+.separador{
+    font-size: 36px;
+  }
+
 
   /* INFO */
   .info {
