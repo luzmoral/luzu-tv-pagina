@@ -123,7 +123,7 @@ html, body {
 .cd {
   position: absolute;
   left: -43px;
-  top: 80px;
+  top: -6px;
   width: 105px;
 }
 .telefono {
@@ -504,6 +504,7 @@ html, body {
   margin-bottom: 10px;
   font-size: 14px;
 }
+
 /* MEDIA QUERIES: adaptar a compu */
 @media (min-width: 768px) {
   /* HERO */
@@ -562,10 +563,10 @@ html, body {
   .celular {
     width: 160px;
   }
-  .marcador{
+.marcador{
   position: absolute;
   left: -25px;
-  top: 380px;
+  top: 300px;
   width: 160px;
   transform: rotate(35deg);
 }
@@ -600,6 +601,13 @@ html, body {
   .item div span {
     font-size: 15px;
   }
+  .mp {
+  position: absolute;
+  right: -30px;
+  top: 50px;
+  width: 90px;
+  transform: rotate(-35deg);
+}
   .tele {
   position: absolute;
   left: -50px;
@@ -695,6 +703,7 @@ html, body {
     height: 70px;
   }
 }
+
 @media (min-width: 1024px) {
   /* HERO */
   .contenido {
@@ -759,7 +768,7 @@ html, body {
   .marcador{
   position: absolute;
   left: -25px;
-  top: 380px;
+  top: 300px;
   width: 160px;
   transform: rotate(35deg);
 }
@@ -802,6 +811,13 @@ html, body {
   .item div span {
     font-size: 17px;
   }
+   .mp {
+  position: absolute;
+  right: -30px;
+  top: 50px;
+  width: 90px;
+  transform: rotate(-35deg);
+}
   .tele {
   position: absolute;
   left: -50px;
@@ -852,12 +868,38 @@ html, body {
   .modal-content {
     max-width: 600px;
   }
-  .deco-casete-izq,
-  .deco-camara-izq,
-  .deco-gitarra-der,
-  .deco-radio-der {
-    width: 180px;
-  }
+ .deco-casete-izq {
+  position: absolute;
+  left: -75px;
+  top: 100px;
+  width: 260px;
+  z-index: 1;
+  transform: rotate(-35deg);
+}
+.deco-camara-izq {
+  position: absolute;
+  left: -50px;
+  top: 500px;
+  width: 210px;
+  z-index: 1;
+  transform: rotate(-40deg);
+}
+.deco-gitarra-der {
+  position: absolute;
+  right: -45px;
+  top: 140px;
+  width: 180px;
+  z-index: 1;
+  transform: rotate(-20deg);
+}
+.deco-radio-der {
+  position: absolute;
+  right: -50px;
+  top: 490px;
+  width: 180px;
+  z-index: 1;
+  transform: rotate(40deg);
+}
   /* FOOTER */
   .footer p {
     font-size: 18px;
