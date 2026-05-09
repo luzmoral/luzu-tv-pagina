@@ -760,11 +760,14 @@ html, body {
   .fecha {
     font-size: 26px;
   }
-  .tiempo span {
+  .numeros span{
     font-size: 56px;
   }
-  .tiempo p {
+  .labels  p {
     font-size: 18px;
+  }
+  .separador{
+    font-size: 36px;
   }
 
   /* INFO */
