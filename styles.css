@@ -102,22 +102,41 @@ html, body {
 }
 .tiempo {
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.numeros, .labels {
+  display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
 }
 
-.tiempo div {
-  text-align: center;
-}
-
-.tiempo span {
+.numeros span {
   font-size: 28px;
   font-weight: bold;
 }
 
-.tiempo p {
+.labels p {
   font-size: 12px;
+  margin: 0;
+  text-align: center;
+  min-width: 60px; /* Para alinear con los números */
+}
+
+.separador {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 -2px;
+  padding: 0 3px;
+}
+.cd {
+  position: absolute;
+  left: -35px;
+  top: -6px;
+  width: 100px;
 }
 .cd {
   position: absolute;
