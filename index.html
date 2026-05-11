@@ -14,21 +14,37 @@
 
 <body>
 
-  <header class="hero">
-  <div class="barra-header">
+  <div class="barra-logo">
     <img src="imagenes/logo.png" alt="Luzu TV" class="logo">
   </div>
-  <div class="contenido">
-    <h1>Festival 5to Aniversario <br>03/10</h1>
-    <p class="hora">10 a 23 hs</p>
-    <p class="desc">
-     Veni a disfrutar del evento,
-      No te lo vayas a perder.
-    </p>
-    <a href="#formulario-entrada" class="btn">ADQUIRÍ TU ENTRADA</a>
-  </div>
 
-</header>
+  <header class="hero">
+    <div class="contenido">
+      <div class="festival-wrap">
+        <img src="imagenes/destello celeste.png" alt="" class="destello destello-izq">
+        <p class="festival">FESTIVAL</p>
+        <img src="imagenes/destello celeste.png" alt="" class="destello destello-der">
+      </div>
+
+      <div class="aniversario-wrap">
+        <p class="aniversario">5TO ANIVERSARIO</p>
+        <img src="imagenes/subrayado .png" alt="" class="subrayado">
+      </div>
+
+      <p class="fecha-hero">03/10</p>
+
+      <div class="hora-wrap">
+        <img src="imagenes/para la hora.png" alt="" class="pincel-hora">
+        <p class="hora">10 a 23 hs</p>
+      </div>
+
+      <p class="desc">
+        Veni a disfrutar del evento,<br>
+        <strong>no te lo vayas a perder.</strong>
+      </p>
+      <a href="#formulario-entrada" class="btn">ADQUIRI TU ENTRADA</a>
+    </div>
+  </header>
 <section class="contador-section">
   <img src="imagenes/cd.png" class="cd">
   <img src="imagenes/telefono.png" class="telefono">
@@ -73,7 +89,7 @@
   <img src="imagenes/tele.png" class="tele">
   <img src="imagenes/musica reproductor.png" class="musica">
 
-  <h2>¿QUÉ PROGRAMAS PARTICIPAN DEL EVENTO?</h2>
+   <h2>¿QUÉ PROGRAMAS PARTICIPAN DEL EVENTO?</h2>
 
   <div class="lista">
 
@@ -130,8 +146,59 @@
 <section class="artistas">
   <img src="imagenes/vinilo.png" class="vinilo">
   <img src="imagenes/microfono.png" class="microfono">
+  <img src="imagenes/estrellas.png" alt="" class="estrellas-artistas estrellas-artistas-izq">
+  <img src="imagenes/estrellas.png" alt="" class="estrellas-artistas estrellas-artistas-der">
 
-  <img src="imagenes/horarios.png" class="img-horarios">
+  <h2>ARTISTAS DEL EVENTO</h2>
+
+  <div class="artistas-carousel" aria-label="Carrusel de artistas del evento">
+    <button class="carousel-btn carousel-prev" type="button" aria-label="Artista anterior">&#10094;</button>
+
+    <div class="artistas-viewport">
+      <div class="artistas-track">
+        <article class="artista-card">
+          <img src="imagenes/los palmeras.png" alt="Los Palmeras">
+          <div class="artista-info">
+            <h3>Los Palmeras</h3>
+            <p>16:00 a 17:30</p>
+          </div>
+        </article>
+
+        <article class="artista-card">
+          <img src="imagenes/la t y la m.jfif" alt="La T y la M">
+          <div class="artista-info">
+            <h3>La T y la M</h3>
+            <p>18:30 a 20:00</p>
+          </div>
+        </article>
+
+        <article class="artista-card">
+          <img src="imagenes/lali.jfif" alt="Lali">
+          <div class="artista-info">
+            <h3>Lali</h3>
+            <p>21:00 a 22:00</p>
+          </div>
+        </article>
+
+        <article class="artista-card">
+          <img src="imagenes/ysy a.jfif" alt="YSY A">
+          <div class="artista-info">
+            <h3>YSY A</h3>
+            <p>21:00 a 23:00</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <button class="carousel-btn carousel-next" type="button" aria-label="Artista siguiente">&#10095;</button>
+
+    <div class="carousel-dots" aria-label="Indicadores del carrusel">
+      <button class="dot active" type="button" aria-label="Ver Los Palmeras"></button>
+      <button class="dot" type="button" aria-label="Ver La T y la M"></button>
+      <button class="dot" type="button" aria-label="Ver Lali"></button>
+      <button class="dot" type="button" aria-label="Ver YSY A"></button>
+    </div>
+  </div>
 
 </section>
 
@@ -163,7 +230,7 @@
       <div class="paso">
         <p class="paso-numero">PASO 1</p>
         <div class="circulo circulo-amarillo">
-          <span>Completá el formulario con tus datos</span>
+        <span>Completá el formulario con tus datos</span>
         </div>
       </div>
 
@@ -187,21 +254,21 @@
         <p>Completa este formulario para formar parte del evento</p>
       </div>
       <form id="form-entrada">
-        <input type="text" id="nombre" placeholder="Nombre y apellido" required>
-        <input type="email" id="correo" placeholder="Correo electrónico" required>
+        <input type="text" id="nombre" placeholder="Nombre y apellido" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+" title="Ingresá solo letras y espacios" required>
+        <input type="email" id="correo" placeholder="Correo electronico" required>
         <input type="text" id="programa" placeholder="Programa favorito" required>
         <button type="submit" class="btn-form">ADQUIRÍ TU ENTRADA</button>
       </form>
     </div>
 
-    <!-- Modal -->
+  <!-- Modal -->
     <div id="modal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <h2>¡Felicidades <span id="nombre-modal"></span>!</h2>
         <p>Has completado tus datos correctamente.</p>
         <p>Estás participando para un Meet & Greet para el programa <strong><span id="programa-modal"></span></strong>.</p>
-        <p>Te llegará el QR de tu entrada al correo electrónico proporcionado.</p>
+        <p>Te llegará el QR de tu entrada al correo <strong><span id="correo-modal"></span></strong>.</p>
       </div>
     </div>
   </section>
@@ -223,14 +290,46 @@
     const form = document.getElementById('form-entrada');
     const modal = document.getElementById('modal');
     const nombreModal = document.getElementById('nombre-modal');
+    const correoModal = document.getElementById('correo-modal');
     const programaModal = document.getElementById('programa-modal');
     const closeBtn = document.querySelector('.close');
+    const artistasTrack = document.querySelector('.artistas-track');
+    const artistaCards = document.querySelectorAll('.artista-card');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+    const dots = document.querySelectorAll('.dot');
+    let artistaActual = 0;
+
+    function mostrarArtista(index) {
+      artistaActual = (index + artistaCards.length) % artistaCards.length;
+      artistasTrack.style.transform = `translateX(-${artistaActual * 100}%)`;
+
+      dots.forEach(function(dot, dotIndex) {
+        dot.classList.toggle('active', dotIndex === artistaActual);
+      });
+    }
+
+    prevBtn.addEventListener('click', function() {
+      mostrarArtista(artistaActual - 1);
+    });
+
+    nextBtn.addEventListener('click', function() {
+      mostrarArtista(artistaActual + 1);
+    });
+
+    dots.forEach(function(dot, index) {
+      dot.addEventListener('click', function() {
+        mostrarArtista(index);
+      });
+    });
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       const nombre = document.getElementById('nombre').value;
+      const correo = document.getElementById('correo').value;
       const programa = document.getElementById('programa').value;
       nombreModal.textContent = nombre;
+      correoModal.textContent = correo;
       programaModal.textContent = programa;
       modal.style.display = 'flex';
     });
